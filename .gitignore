@@ -1,0 +1,7 @@
+build/
+out/
+__pycache__/
+*.save
+*.tmp
+gmon.out
+docs/reference-conversation.md
