@@ -1,0 +1,10 @@
+name: Portable simulation checks
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make -j2 test test-render
+      - run: make sanitize
+      - run: python3 tools/fetch_weather.py --offline

@@ -1,0 +1,42 @@
+{
+  "name": "newcastle_2023_may_aug",
+  "kind": "historical_reanalysis",
+  "dataset": "ECMWF ERA5 via Open-Meteo",
+  "source_documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+  "underlying_dataset": "https://doi.org/10.24381/cds.adbb2d47",
+  "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=54.9783&longitude=-1.6178&start_date=2023-05-01&end_date=2023-09-01&hourly=temperature_2m%2Crain%2Cshortwave_radiation%2Cwind_speed_10m&timezone=GMT&wind_speed_unit=ms&models=era5",
+  "retrieved_utc": "2026-09-07T21:34:33.364527+00:00",
+  "requested_coordinates": {
+    "latitude": 54.9783,
+    "longitude": -1.6178
+  },
+  "returned_grid": {
+    "latitude": 55.0,
+    "longitude": -1.5,
+    "elevation": 58.0
+  },
+  "raw_sha256": "0c8dea1e028ece9f7ed137e0041db6935947d84ef34c817d36ddcc6049b482a2",
+  "csv_sha256": "6bc246a0ec2552c74af6396d5d2d7daa197bbc17fa48cc16368cabeba801b9ff",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Weather data by Open-Meteo. Contains modified Copernicus Climate Change Service information.",
+  "method": "ERA5 historical reanalysis, not a direct station observation or invented weather trace.",
+  "interval_conversion": "Rain and shortwave radiation at API hour i+1 assigned to tape interval i. Temperature and wind taken at hour i.",
+  "missing_data_policy": "Reject incomplete/non-finite/nonconsecutive hours; no imputation.",
+  "metrics_before_loop_smoothing_or_variation": {
+    "days": 123,
+    "hours": 2952,
+    "missing_values": 0,
+    "mean_temperature_c": 14.747,
+    "min_temperature_c": 5.6,
+    "max_temperature_c": 25.4,
+    "hours_below_10c": 270,
+    "hours_above_28c": 0,
+    "rain_total_mm": 271.1,
+    "rainy_days_at_least_0_1mm": 81,
+    "longest_dry_run_days_under_0_1mm": 13,
+    "max_hour_rain_mm": 6.7,
+    "mean_solar_wm2": 209.555,
+    "mean_wind_ms": 3.768
+  }
+}

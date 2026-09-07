@@ -1,0 +1,4 @@
+# Merge with the chosen board configuration; verify PSRAM clock/voltage on board.
+CONFIG_COMPILER_CXX_EXCEPTIONS=y
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_USE_MALLOC=y
