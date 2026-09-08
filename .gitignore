@@ -2,6 +2,8 @@ build/
 out/
 __pycache__/
 *.save
+*.checkpoint
+*.scratch.*
 *.tmp
 gmon.out
 docs/reference-conversation.md

@@ -1,0 +1,47 @@
+{
+  "source_day": 3650,
+  "advanced_days": 7,
+  "matched": true,
+  "runs": [
+    {
+      "day": 3657,
+      "seed": 42,
+      "founders": 30,
+      "workers": 10,
+      "brood": 18,
+      "queen": true,
+      "extinct": false,
+      "births": 460,
+      "deaths": 479,
+      "plants": 13,
+      "soil_moved": 8608,
+      "pickups": 1476738,
+      "exchanges": 263668,
+      "actions": 872190835,
+      "memory_bytes": 1211276,
+      "wall_seconds": 2.06358,
+      "historical_weather": true,
+      "hash": 17848075913269081870
+    },
+    {
+      "day": 3657,
+      "seed": 42,
+      "founders": 30,
+      "workers": 10,
+      "brood": 18,
+      "queen": true,
+      "extinct": false,
+      "births": 460,
+      "deaths": 479,
+      "plants": 13,
+      "soil_moved": 8608,
+      "pickups": 1476738,
+      "exchanges": 263668,
+      "actions": 872190835,
+      "memory_bytes": 1211276,
+      "wall_seconds": 1.23735,
+      "historical_weather": true,
+      "hash": 17848075913269081870
+    }
+  ]
+}

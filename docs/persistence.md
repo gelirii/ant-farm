@@ -54,9 +54,9 @@ still synchronize access to a world while it is being advanced or saved.
 
 An atomic rename is not a power-loss durability guarantee: the portable C++ writer
 does not perform platform-specific file and directory `fsync`. Embedded storage
-integration must use two alternating snapshot slots, verify length/checksum before
-accepting a slot, and retain the previous validated slot through an interrupted
-write. The ESP32 filesystem, SD card and power-cut behavior must be tested on the
+integration can use the [portable checkpoint controller](checkpoint.md), which
+implements two alternating snapshots with checksummed RTC metadata and fallback
+selection. The ESP32 filesystem, SD card and power-cut behavior must be tested on the
 selected hardware before claiming physical-device outage reliability. A save is
 not authenticated; do not load untrusted snapshots as a security feature.
 

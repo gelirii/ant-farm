@@ -1,0 +1,1 @@
+{"scope":"dense host renderer fixture, not a living colony or P4 benchmark","workers":512,"brood":1024,"corpses":128,"food_sites":128,"frames":300,"cold_ms":30.5311,"warm_mean_ms":1.98906,"warm_p95_ms":2.974,"mean_restored_pixels":1344435,"renderer_bytes":4264600,"output_bytes":4147200}

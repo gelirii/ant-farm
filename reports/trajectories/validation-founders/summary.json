@@ -1,0 +1,26 @@
+[
+  {
+    "founders": 10,
+    "weather_year": 2023,
+    "trials": 3,
+    "survivors": 3,
+    "failure_rate_95pct_upper_bound": 0.561497031755032,
+    "median_workers": 26
+  },
+  {
+    "founders": 20,
+    "weather_year": 2023,
+    "trials": 3,
+    "survivors": 3,
+    "failure_rate_95pct_upper_bound": 0.561497031755032,
+    "median_workers": 28
+  },
+  {
+    "founders": 30,
+    "weather_year": 2023,
+    "trials": 3,
+    "survivors": 3,
+    "failure_rate_95pct_upper_bound": 0.561497031755032,
+    "median_workers": 26
+  }
+]

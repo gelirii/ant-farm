@@ -1,0 +1,18 @@
+[
+  {
+    "founders": 30,
+    "weather_year": 2019,
+    "trials": 1,
+    "survivors": 1,
+    "failure_rate_95pct_upper_bound": 0.7934506856227534,
+    "median_workers": 45
+  },
+  {
+    "founders": 30,
+    "weather_year": 2021,
+    "trials": 1,
+    "survivors": 1,
+    "failure_rate_95pct_upper_bound": 0.7934506856227534,
+    "median_workers": 41
+  }
+]

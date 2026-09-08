@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-09-07T23:20:05Z",
+  "binary_sha256": "8bb24b79eb7d6905dabfc07783d2362015ee488e4298d3cbe5cdd5ea1d16ae3d",
+  "mode": "full_core_unrendered",
+  "requested_days": 730.0,
+  "options": {
+    "days": 730.0,
+    "seeds": 3,
+    "start_seed": 2000,
+    "founders": [
+      10,
+      20,
+      30
+    ],
+    "years": [
+      2023
+    ],
+    "jobs": 3,
+    "nectar": 1,
+    "insects": 0.25,
+    "out": "out/validation-founders"
+  }
+}

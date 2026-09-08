@@ -1,7 +1,7 @@
 CXX ?= g++
 CPPFLAGS := -Iinclude
 CXXFLAGS ?= -O2 -g -std=c++17 -Wall -Wextra -Wpedantic
-CORE := src/core.cpp src/weather.cpp src/persistence.cpp
+CORE := src/core.cpp src/weather.cpp src/persistence.cpp src/checkpoint.cpp
 HEADERS := $(wildcard include/antfarm/*.hpp)
 .PHONY: all test clean sanitize test-render
 all: build/antfarm out
@@ -19,15 +19,20 @@ build/inspect: $(CORE) tools/inspect.cpp $(HEADERS) | build
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CORE) tools/inspect.cpp -o $@
 build/test_weather: src/weather.cpp tests/test_weather.cpp $(HEADERS) | build
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) src/weather.cpp tests/test_weather.cpp -o $@
+build/test_checkpoint: $(CORE) tests/test_checkpoint.cpp $(HEADERS) | build
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CORE) tests/test_checkpoint.cpp -o $@
 build/test_render: $(CORE) src/render.cpp tools/render_check.cpp $(HEADERS) | build
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CORE) src/render.cpp tools/render_check.cpp -o $@
-test: build/test_core build/test_weather
+test: build/test_core build/test_weather build/test_checkpoint
 	./build/test_core
 	./build/test_weather
+	./build/test_checkpoint
 test-render: build/test_render
 	./build/test_render
 sanitize: | build
 	$(CXX) $(CPPFLAGS) -O1 -g -std=c++17 -fsanitize=address,undefined -fno-omit-frame-pointer $(CORE) tests/test_core.cpp -o build/test_sanitize
 	./build/test_sanitize
+	$(CXX) $(CPPFLAGS) -O1 -g -std=c++17 -fsanitize=address,undefined -fno-omit-frame-pointer $(CORE) tests/test_checkpoint.cpp -o build/test_checkpoint_sanitize
+	./build/test_checkpoint_sanitize
 clean:
 	rm -rf build

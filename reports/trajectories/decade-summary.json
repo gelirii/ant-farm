@@ -1,0 +1,20 @@
+{
+  "day": 3650,
+  "seed": 42,
+  "founders": 30,
+  "workers": 10,
+  "brood": 27,
+  "queen": true,
+  "extinct": false,
+  "births": 460,
+  "deaths": 479,
+  "plants": 15,
+  "soil_moved": 8608,
+  "pickups": 1475920,
+  "exchanges": 263539,
+  "actions": 871655906,
+  "memory_bytes": 1249204,
+  "wall_seconds": 907.024,
+  "historical_weather": true,
+  "hash": 6933938250642833745
+}

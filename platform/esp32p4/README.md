@@ -16,8 +16,10 @@ also specifies the dedicated 2.5 V DPHY supply and DMA alignment requirements.
 ## Board application contract
 
 1. Mount storage, initialize battery-backed RTC, load the selected weather CSV,
-   then load the newest valid world snapshot. Keep two validated snapshot slots;
-   each needs an atomically associated RTC timestamp and sequence number.
+   then use `CheckpointStore` to load the newest valid world snapshot. The
+   [portable controller](../../docs/checkpoint.md) binds the world, RTC timestamp
+   and sequence in two alternating checksummed envelopes. Supply and validate
+   the actual board's RTC reading and implement filesystem durability barriers.
 2. A running snapshot resumes through `World::catch_up(elapsed_seconds)` using
    RTC time since its checkpoint. A deliberately paused snapshot resumes without
    advancing the interval spent OFF. Do not silently advance after an invalid or

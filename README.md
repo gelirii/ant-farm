@@ -5,7 +5,7 @@ C++ core runs the same individual ant behaviours in real time and in accelerated
 headless experiments. The target is a roughly A4, 1080×1920 ESP32-P4 display.
 
 **Development prototype.** The desktop simulation, renderer, historical weather,
-save/restore and test tools work. Ecological calibration is still being evaluated;
+save/restore and test tools work. The completed test batch covers 32 simulated years with all 12 colonies surviving;
 finite survival trials cannot establish an extinction guarantee. Panel-specific
 firmware, physical RTC/power handling and P4 performance have not been validated.
 See [validation results](reports/validation.md) and the
@@ -103,7 +103,7 @@ make sanitize
 python3 tools/fetch_weather.py --offline
 ```
 
-Tests cover conservation, reproducibility, arbitrary time chunks, saved cargo and
+Tests also cover the two-slot RTC checkpoint controller. They cover conservation, reproducibility, arbitrary time chunks, saved cargo and
 brood, corrupted-save rejection, pause/outage semantics, extinction reset, spoil
 support, weather continuity and cached-versus-fresh pixels. Full ecology trials
 are reported separately. LeakSanitizer cannot run under some traced/sandboxed
@@ -114,5 +114,8 @@ The renderer emits actual RGB565 pixels at the target resolution. It reuses a
 terrain cache and redraws affected tiles; interpolation changes appearance only.
 Host CPU and memory measurements are in the report. They are not P4 frame-rate
 measurements, and no claim of an absolute optimum is made without device profiling.
+
+After editing public World state directly for a fixture/import, call `rebuild_transient()`
+before advancing it. Normal simulation mutations maintain these caches automatically.
 
 The original private planning conversation and local saves are excluded from Git.
